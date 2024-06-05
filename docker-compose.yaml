@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  worker:
+    build:
+      context: .
+      args:
+        HTTP_PROXY: ${HTTP_PROXY}
+        HTTPS_PROXY: ${HTTPS_PROXY}
+        GROUP_ID: ${GROUP_ID}
+        GROUP_NAME: ${GROUP_NAME}
+        USER_ID: ${USER_ID}
+        USER_NAME: ${USER_NAME}
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    volumes:
+      - /data1/home/hamidim/:/data1/home/hamidim/
+    entrypoint: tail -f /dev/null
