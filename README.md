@@ -13,7 +13,7 @@
 
 ## Get Started(Evaluation done by Mehdi Hamidi)
 
-J'ai fait quelques modification pour faire fonctionner le code, voici les étapes à suivre pour évaluer le code en utilisant docker ! impossible de le faire sur roméo sauf si vous avez accèes aux droits root
+J'ai fait quelques modification pour faire fonctionner le code, voici les étapes à suivre pour évaluer le code en utilisant docker ! impossible de le faire sur roméo sauf si vous avez accèes aux droits root. Il faut modifier le fichier .env en premier!
 
 ```shell
 # Création du conteneur
