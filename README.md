@@ -1,22 +1,7 @@
 # Adaptive Dynamic Filtering Network for Image Denoising (AAAI 2023)
 
 [![paper](https://img.shields.io/badge/arXiv-Paper-brightgreen)](https://arxiv.org/pdf/2211.12051)
-[![supplement](https://img.shields.io/badge/Supplementary-Material-B85252)](https://drive.google.com/file/d/1dxXYDBRnTwq9VtnmBrKDMYvb5Wo6fWMR/view?usp=share_link)
 
-> **Abstract:** In image denoising networks, feature scaling is widely used to enlarge the receptive field size and reduce computational costs. This practice, however, also leads to the loss of high-frequency information and fails to consider within-scale characteristics. Recently, dynamic convolution has exhibited powerful capabilities in processing high-frequency information (*e.g.*, edges, corners, textures), but previous works lack sufficient spatial contextual information in filter generation. To alleviate these issues, we propose to employ dynamic convolution to improve the learning of high-frequency and multi-scale features. Specifically, we design a spatially enhanced kernel generation (SEKG) module to improve dynamic convolution, enabling the learning of spatial context information with a very low computational complexity. Based on the SEKG module, we propose a dynamic convolution block (DCB) and a multi-scale dynamic convolution block (MDCB). The former enhances the high-frequency information via dynamic convolution and preserves low-frequency information via skip connections. The latter utilizes shared adaptive dynamic kernels and the idea of dilated convolution to achieve efficient multi-scale feature extraction. The proposed multi-dimension feature integration (MFI) mechanism further fuses the multi-scale features, providing precise and contextually enriched feature representations. Finally, we build an efficient denoising network with the proposed DCB and MDCB, named ADFNet. It achieves better performance with low computational complexity on real-world and synthetic Gaussian noisy datasets.
-
-<details>
-  <summary> <strong>Network Architecture</strong> (click to expand) 	</summary>
-<table>
-  <tr>
-    <td> <img src="Figs\fig2.png" alt="Fig2" width="400px"/> </td>
-    <td> <img src="Figs\fig3.png" alt="fig3" width="400px"/> </td>
-  </tr>
-</table> 
-<p align="center">
-  <img src="Figs\fig4.png" alt="Fig2" width="800px"/>
-</p>
-</details>
 
 ## Environment
 
@@ -26,14 +11,20 @@
 - imageio
 - cv2
 
-## Get Started
+## Get Started(Evaluation done by Mehdi Hamidi)
 
-The Deformable ConvNets V2 (DCNv2) module in our code adopts  [chengdazhi's implementation](https://github.com/chengdazhi/Deformable-Convolution-V2-PyTorch/tree/pytorch_1.0.0).
-
-You can compile the code according to your machine. 
+J'ai fait quelques modification pour faire fonctionner le code, voici les étapes à suivre pour évaluer le code en utilisant docker ! impossible de le faire sur roméo sauf si vous avez accèes aux droits root
 
 ```shell
+# Création du conteneur
+docker compose up --build
+#Attach to the container using an extension or run it through CLI
+
+# Once in the container follow this steps
+cd Builder
 sh make.sh
+
+# Follow the steps below depending on your needs
 ```
 
 Please make sure your machine has a GPU, which is required for the DCNv2 module.
